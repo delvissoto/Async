@@ -70,15 +70,28 @@ const fakeRequestPromise = (url) =>{
 //     console.log("Response:", res)
 // })
 
-const getStarWarsPerson = async (id)=>{
-    try {
-        const res = await axios.get(`https://swapi.dev/api/people/${id}/`)
-        console.log(res.data)
-    } catch (error) {
-        console.log(error)
-    }
-}
+// const getStarWarsPerson = async (id)=>{
+//     try {
+//         const res = await axios.get(`https://swapi.dev/api/people/${id}/`)
+//         console.log(res.data)
+//     } catch (error) {
+//         console.log(error)
+//     }
+// }
 
-for(let i =1; i<15; i++){
-    getStarWarsPerson(i)
+// for(let i =1; i<15; i++){
+//     getStarWarsPerson(i)
+// }
+
+
+
+const getDadJokes = async () =>{
+try {
+    const config = {headers: {Accept: 'application/json'}}
+    const res  = await axios.get(`https://icanhazdadjoke.com/`, config)
+    console.log(res.data.jokes)
+}catch(e){
+console.log(e)
 }
+}
+getDadJokes()
